@@ -1,24 +1,30 @@
-# README
+# Rails Api App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Template de rails para crear una aplicacion api-based
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* generacion del proyecto :
+```
+rails new rails-api-app --api  --database=postgresql
+bundle install
+```
+* generacion de los modelos
+```
+rails g model <modelo>
+```
+* generacion de los controllers
+```
+rails g controller <modelo>s
+```
+* generacion de la ruta (config/routes.rb)
+```
+resources :<tabla>s
+```
+* devolver un objeto en json
+```
+render json:User.all #por ejemplo
+```
+* devolver un error
+```
+e = Errors::NotFound.new
+render json: ErrorSerializer.new(e), status: e.status
+```
