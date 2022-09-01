@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     def show
         json User.find(params[:id])
     end
-
+ 
     def update
         user = User.find(params[:id])
         if user.update(post_params)
