@@ -15,7 +15,7 @@ class UsersController < ApplicationController
         user = User.find(params[:id])
         if user.update(post_params)
             json user
-        else
+        else 
             e = Errors::NotFound.new
             json ErrorSerializer.new(e), status: e.status
         end
